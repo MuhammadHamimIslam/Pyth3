@@ -1,8 +1,12 @@
-password1 = input("Type your password :")
+from getpass import getpass
+# my first imported module 
+
+
+password1 = getpass("Type your password :")
 attempt = 0 # initial attempt is 0
 
 while attempt != 3:
-	password2 = input("Retype your password :")
+	password2 = getpass("Retype your password :")
 	
 	if password1 != password2:
 	 print("password not matched! Try again.")
