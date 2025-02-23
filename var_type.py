@@ -13,6 +13,8 @@ l = frozenset({1,2,3,4}) # frozenset
 m = True # boolean 
 n = memoryview(b"abcd") # memory view 
 o = None # None
+
+
 print(a,"type:", type(a), "\n")
 
 print(b,"type:", type(b), "\n")
