@@ -5,7 +5,7 @@ from getpass import getpass
 password1 = getpass("Type your password :")
 attempt = 0 # initial attempt is 0
 
-while attempt != 3:
+while attempt != 3: # max attempt is 3
 	password2 = getpass("Retype your password :")
 	
 	if password1 != password2:
