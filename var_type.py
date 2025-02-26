@@ -15,33 +15,33 @@ n = memoryview(b"abcd") # memory view
 o = None # None
 
 
-print(a,"type:", type(a), "\n")
+print(a," -> type:", type(a), "\n")
 
-print(b,"type:", type(b), "\n")
+print(b," -> type:", type(b), "\n")
 
-print(c,"type:", type(c), "\n")
+print(c," -> type:", type(c), "\n")
 
-print(d,"type:", type(d), "\n")
+print(d," -> type:", type(d), "\n")
 
-print(e,"type:", type(e), "\n")
+print(e," -> type:", type(e), "\n")
 
-print(f,"type:", type(f), "\n")
+print(f," -> type:", type(f), "\n")
 
-print(g,"type:", type(g), "\n")
+print(g," -> type:", type(g), "\n")
 
-print(h,"type:", type(h), "\n")
+print(h," -> type:", type(h), "\n")
 
-print(i,"type:", type(i), "\n")
+print(i," -> type:", type(i), "\n")
 
-print(j,"type:", type(j), "\n")
+print(j," -> type:", type(j), "\n")
 
-print(k,"type:", type(k), "\n")
+print(k," -> type:", type(k), "\n")
 
-print(l,"type:", type(l), "\n")
+print(l," -> type:", type(l), "\n")
 
-print(m,"type:", type(m), "\n")
+print(m," -> type:", type(m), "\n")
 
-print(n,"type:", type(n), "\n")
+print(n," -> type:", type(n), "\n")
 
-print(o,"type:", type(o), "\n")
+print(o," -> type:", type(o), "\n")
 		
