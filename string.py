@@ -6,12 +6,16 @@ print(x.lower()) # lower all the characters
 print(x.capitalize()) # capitalize the 1st character
 print(x.casefold()) # lower the 1st character
 print(x.count("l")) # find l is present how many times 
-print(x.endswith("ld!")) # checks if it's ends with "ld!"
+print(x.startswith("Hell")) # checks if it starts with "Hell"
+print(x.endswith("ld!")) # checks if it ends with "ld!"
 print(x.find("Hell")) # finds the index of H
 print(x.replace("World", "Everyone")) # replaces World with Everyone
 print(x.index("!")) # gives the index of "!"
 print(x.split(" ")) # breaks the string to list with " "
-
+print("       Hello     ".strip()) # removes whitespace 
+print("123".isdigit()) # returns true is all elements ate digits 
+print("    Hey  ".lstrip()) # removes whitespace from left
+print("  Hey everyone   ".rstrip()) # removes whitespace from right 
 
 
 # string slicing 
