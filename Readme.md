@@ -1,6 +1,6 @@
 # Pyth3
 
-Pyth3 is a Python project of python practice. This repository contains the source code, documentation, and examples to help you get started with Pyth3.
+Pyth3 is a Python project of my python practice. This repository contains the source code, documentation, and examples.
 
 ## Table of Contents
 
