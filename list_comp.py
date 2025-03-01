@@ -5,6 +5,8 @@ list3 = []
 list4 = []
 list5 = ["a", "b", "c", "d", "e"]
 list6 = []
+
+
 # adding item to a list based on condition 
 for i in list1:
   if i % 2 == 1 :
