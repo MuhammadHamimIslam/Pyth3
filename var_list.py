@@ -1,4 +1,4 @@
-list1 = ["Python", 1990, {"isEasy": True}, [1, 2, 3, 4, 5] ]
+list1 = ["Python", 1991, {"isEasy": True}, [1, 2, 3, 4, 5] ]
 
 list2 = [10, 20, 30, 40] 
 
@@ -25,3 +25,16 @@ print(sum(list2)) # gives the sum of all elm
 print(max(list2)) # returns the maximum num
 
 print(min(list2)) # returns the minimum num
+
+list1.extend(list2) # adds two iterables 
+print(list1)
+
+list1.pop(3) # removes the element in index 3
+print(list1)
+
+del list1[3] # deletes the element in index 3
+print(list1)
+
+list2.clear() # clears the list
+print(list2)
+
