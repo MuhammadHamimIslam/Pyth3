@@ -57,4 +57,4 @@ print(abs(-10)) # returns absolute value
 
 print(pow(2,5)) # returns power 2^5
 
-print(round (9.99) # rounds a float 
+print(round (9.99)) # rounds a float 
