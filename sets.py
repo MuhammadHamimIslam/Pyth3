@@ -15,6 +15,12 @@ print("set2: ", set2)
 set1.add("Python is easy")
 print("set1: ", set1)
 
+set3 = {11, 13, 15, 17}
+set2.update(set3) # concating 2 iterable
+print("set2: ", set2)
+
+set1.update([])
+
 "removing item from set"
 set2.remove(9)
 print("set2: ", set2)
