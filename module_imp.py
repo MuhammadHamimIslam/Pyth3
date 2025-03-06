@@ -6,5 +6,12 @@ to load all functions or class
 from module_exp import *
 """
 
+"""
+module's name can be changed: 
+import module_exp as myModule
+to call a function then just: 
+myModule.avg()
+"""
+
 print(module_exp.avg(1, 3, 5, 7, 9)) # prints the avg function in the module_exp file
 print(module_exp.info(name = "abc", age = 26, email = "abc123@gmail.com"))
