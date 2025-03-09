@@ -59,3 +59,28 @@ def findLongestWord(st):
     if len(result) < len(word): result = word
   return result
 
+"A function that performs basic string compression using the counts of repeated characters"
+
+def strCompression(st): 
+  result = [] # initial result 
+  curr = st[0] # current is st[0]
+  count = 1
+  for i in range(1, len(st)): #loop through string 
+    if st[i] == curr: count += 1 # if st[i] matches to current count++
+    else:
+      result.append(curr) # add current char
+      result.append(str(count)) # add current count 
+      curr = st[i] # increment the count
+      count = 1 # set count to 1
+  return "".join(result)
+
+"A function to check if two given strings are anagrams of each other"
+def checkAnagram(str1, str2): 
+  def wordFrequn(st): 
+      # initial dictionary 
+    result = {}
+    for char in st.lower(): # loop inside the string -> case insensitive 
+      if char not in result: result[char] = 1
+      else: result[char] += 1
+    return result
+  return wordFrequn(str1) == wordFrequn(str2)
