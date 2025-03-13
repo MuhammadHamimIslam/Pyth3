@@ -26,7 +26,7 @@ strRev = lambda st: st[::-1]
 
 "A function to check palindrome"
 
-def checkPalindrome (st):
+def isPalindrome (st):
   a = st.lower()
   return a == a[::-1]
   
@@ -75,7 +75,7 @@ def strCompression(st):
   return "".join(result)
 
 "A function to check if two given strings are anagrams of each other"
-def checkAnagram(str1, str2): 
+def isAnagram(str1, str2): 
   def wordFrequn(st): 
       # initial dictionary 
     result = {}
@@ -84,3 +84,75 @@ def checkAnagram(str1, str2):
       else: result[char] += 1
     return result
   return wordFrequn(str1) == wordFrequn(str2)
+
+"A function to encrypt a given string by shifting each character by a certain number of positions in the alphabet."
+
+def caesarCipherEncrypt(inpStr, shift): 
+  result = ""
+  for char in inpStr: 
+    if char.isalpha():
+      if char.islower(): 
+        start = ord('a')
+      else:
+        start = ord('A')
+      shiftedChar = chr((ord(char) - start + shift) % 26 + start)
+      result += shiftedChar
+    else:
+      result += char
+  return result
+
+"A function to decrypt a Caesar encrypted string by shifting each character by a certain number of positions in the alphabet."
+
+def caesarCipherDecrypt(inpStr, shift): 
+  result = "" # an empty string to hold the value 
+  for char in inpStr: # interate through the string 
+    if char.isalpha(): # if char is a character 
+      if char.islower(): 
+        start = ord("a")
+      else:
+        start = ord("A")
+      shiftedChar = chr((ord(char) - start - shift) % 26 + start)
+      result += shiftedChar
+    else:
+      result += char
+  return result
+  
+"A function to swap the case of all characters in a string"
+
+def swapCase(inpStr): 
+  result = "" # empty string to store 
+  for char in inpStr: #loop the str
+    if char.islower(): # if lower -> upper 
+      result += char.upper()
+    else: # if upper -> lower 
+      result += char.lower()
+  return result 
+
+"A function to remove all punctuation from a string"
+
+def removePunc(inpStr):
+  result = "" # empty string 
+  punctuation = "'.,/-_(!?\")" # all punc
+  for char in inpStr: # loop the str
+    if char not in punctuation: # if punctuation isn't present then add the char to the result 
+      result += char
+  return result
+
+
+  
+
+"A  function to find all unique characters in a string"
+
+def findUniqueChar(inpStr): 
+  tracker = {} # word tracker 
+  for char in inpStr.lower(): # case insensitive loop
+    if char not in tracker: 
+      tracker[char] = 1 # if eord not in tracker word will be added 
+    else:
+      tracker[char] += 1 # word count++
+  uniqueChar = [char for char in tracker if tracker[char] == 1] # find unique chars
+  return uniqueChar
+
+"A function to check if a substring exists within a given string"  
+
+isSubStr = lambda inpStr, subStr: subStr in inpStr
