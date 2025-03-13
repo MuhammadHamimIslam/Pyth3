@@ -13,7 +13,7 @@ def findVowel(st):
 def convInt(st): 
   for char in st: 
     if char not in "01": return "Invalid string!"
-    else: return int(st, 2)
+    return int(st, 2)
 
 "A function to to sort the characters in a string"
 
@@ -72,6 +72,8 @@ def strCompression(st):
       result.append(str(count)) # add current count 
       curr = st[i] # increment the count
       count = 1 # set count to 1
+  result.append(curr)  # add last character
+  result.append(str(count))  # add last count
   return "".join(result)
 
 "A function to check if two given strings are anagrams of each other"
