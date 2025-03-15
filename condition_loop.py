@@ -30,3 +30,5 @@ for _ in range(0, 6):
 while a > 10 : # continue loop till the condition is false 
   print("A is less than 10!")
   a += 1
+else:
+  print("done!")
