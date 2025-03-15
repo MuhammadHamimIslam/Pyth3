@@ -158,3 +158,17 @@ def findUniqueChar(inpStr):
 "A function to check if a substring exists within a given string"  
 
 isSubStr = lambda inpStr, subStr: subStr in inpStr
+
+"A function to encrypt a string with ROT13"
+
+def rot13(text):
+  result = []
+  for char in text: 
+    if char.islower(): 
+      result.append(chr((ord(char) - ord('a') + 13) % 26 + ord('a')))
+    elif char.isupper():
+      result.append(chr((ord(char) - ord('A') + 13) % 26 + ord('A')))
+    else:
+      result.append(char)
+  return "".join(result)
+  

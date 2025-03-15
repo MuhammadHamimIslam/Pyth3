@@ -1,22 +1,32 @@
-from getpass import getpass
-# my first imported module 
+a = int(input("Enter the number: "))
 
-
-password1 = getpass("Type your password :")
-attempt = 0 # initial attempt is 0
-
-while attempt != 3: # max attempt is 3
-	password2 = getpass("Retype your password :")
-	
-	if password1 != password2:
-	 print("password not matched! Try again.")
-	 
-	else:
-		print("Password matched. Ready to enter")
-		break
-	
-	attempt += 1 # increase attempt number to 1
-
+if a % 2 == 0: 
+  print("Even!")
 else:
- print("max attempt reached!Try again later")
+  print("Odd!")
 
+"shorthand approach"
+print("Even") if a % 2 == 0 else print("Odd")
+
+if a > 0: 
+  print("positive!")
+elif a == 0:
+  print("Zero!")
+elif a < 0:
+  print("negative!")
+  
+"Shorthand approach"
+print("positive!") if a > 0 else print("Zero!") if a == 0 else print("negative")
+
+"for loop"
+
+for i in range(0, 6): 
+  print(i) # prints the number between 0 to 6 exclusive 
+for _ in range(0, 6): 
+  print("I'm inside the loop")
+  
+"while loop"
+
+while a > 10 : # continue loop till the condition is false 
+  print("A is less than 10!")
+  a += 1
