@@ -50,7 +50,7 @@ set5 = {3, 9, 5, 6, 2,.4}
 
 set3 = set4.union(set4) # preforms set union 
 print(f"set3: ", set3)
-
+print(f"Union is: ", set4 | set3)
 set4.intersection_update(set5) # performs set intersection in the set4
 print(f"set4: ", set4)
 
