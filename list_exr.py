@@ -28,7 +28,7 @@ def randomList():
   
 "A function to create an list of the factorial of the input number"
 
-def factorialList(inpNum : int): 
+def factorialList (inpNum: int) -> list: 
   result = []
   def factorial(n): 
     if n == 0: 
@@ -37,5 +37,53 @@ def factorialList(inpNum : int):
   for i in range(0, inpNum): 
     result.append(factorial(i))
   return result 
+
+"A function to filter the odd numbers in a list"
+
+def filterOdd(inputList): 
+  result = [i for i in inputList if i % 2 == 0] # use list compression to filter odds
+  return result 
+
+"A function to sort a list of dictionaries of users for their age"
+
+def sortByAge(users): 
+    users.sort(key = lambda a: a["age"]) # sort the list by user's age
+    return users
   
+"A function to flatten a list of lists"
+
+def flattenList(inputList): 
+  result = [] # an empty list
+  for elm in inputList: # loop 
+    if type(elm) == list: # elm is list add this to result 
+      result.extend(flattenList(elm))
+    else:
+      result.append(elm) # else add to result
+  return result
+
+  print(flattenList([1, 2, 3, [4, 5, [6, 7]]]))
+
+"A function to do union in multiple lists"
+
+def union(*lists): 
+  result = []
+  for elm in lists:
+    for item in elm: 
+      if item not in result: 
+        result.append(item)
+  return result
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [3, 4, 5, 6, 7]
+list3 = [5, 6, 7, 8, 9]
+
+"A function to find common elements in multiple lists"
+
+def findCommon(*lists): 
+  # convert the first element to set
+  result = set(lists[0])
+  for elm in lists[1:]: # loop through other elements 
+    result &= set(elm) # convert others to set and do intersection 
+  return list(result)
   
+print(findCommon(list1, list2, list3))
