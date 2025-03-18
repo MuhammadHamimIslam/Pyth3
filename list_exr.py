@@ -73,10 +73,6 @@ def union(*lists):
         result.append(item)
   return result
 
-list1 = [1, 2, 3, 4, 5]
-list2 = [3, 4, 5, 6, 7]
-list3 = [5, 6, 7, 8, 9]
-
 "A function to find common elements in multiple lists"
 
 def findCommon(*lists): 
@@ -85,5 +81,3 @@ def findCommon(*lists):
   for elm in lists[1:]: # loop through other elements 
     result &= set(elm) # convert others to set and do intersection 
   return list(result)
-  
-print(findCommon(list1, list2, list3))

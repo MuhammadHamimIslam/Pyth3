@@ -40,16 +40,6 @@ def removeDup(st):
       result.append(char)
   return "".join(result)
   
-"A function to count the frequency of each character in a string"
-
-def wordFrequency(st): 
-  # initial dictionary 
-  result = {}
-  for char in st.lower(): # loop inside the string -> case insensitive 
-    if char not in result: result[char] = 1
-    else: result[char] += 1
-  return result
-
 "A function to find the longest word in a given string"
 
 def findLongestWord(st):
