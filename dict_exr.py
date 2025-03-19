@@ -1,7 +1,7 @@
 "A function to convert a list of tuples to dictionary"
 
 def convToDict(inpList):
-  result = {} # empty result 
+  result = {} # result holder 
   for i in inpList: #loop through the list
       # append the first as key and 2nd as value
       result[i[0]] = i[1] 
@@ -28,7 +28,7 @@ def wordFrequency(st):
 "A function to group words by their lengths"
 
 def groupByLength(fruits): 
-    result = {} # empty result 
+    result = {} # result holder 
     for fruit in fruits: # loop the fruits 
         length = len(fruit) #get the length 
         if length not in result: 
@@ -41,7 +41,7 @@ def groupByLength(fruits):
 "A function to invert a dictionary"        
     
 def invertDict(dictionary): 
-    result = {} # empty result 
+    result = {} # result holder 
     for key, value in dictionary.items(): # loop the dictionary 
         if value not in result: # if value not in result then initialize it
             result[value] = []
@@ -63,7 +63,7 @@ def handleMissing(dictionary, key):
 "A function to create dictionary from matrix"
 
 def matrixToDict1(matrix):
-    result = {} 
+    result = {} # result holder 
     for elm in matrix: 
         # append result at the index of the element+1 amd value is the elm
         result[matrix.index(elm) + 1] = elm
@@ -82,4 +82,37 @@ def nestedDict(inpDict, inpList):
         result[inpList[i]] = {key: value}
     return result 
        
+"A function to filter and sort a list of users dictionary by their age"
+
+def filterByAge(users): 
+    result = []
+    for user in users: # loop the users 
+    # if user's age is more than 18 then append the user to result 
+        if user["age"] >= 18: 
+            result.append(user)
+    # now sort by their age
+    result.sort(key = lambda a: a["age"])
+    return result 
+
+"A function to remove keys with same values in a dictionary"
+
+def removeSameValues(inpDict): 
+    result = {} # result holder 
+    dictValue = list(inpDict.values()) # a list of dictionary's value 
+    unique = [elm for elm in dictValue if dictValue.count(elm) == 1] # find the unique 
+    for key, value in inpDict.items(): 
+    # loop the dictionary, if value is found in unique list then append to the result 
+        if value in unique: 
+            result[key] = value
+    return result 
+
+"A function to extract dictionary with each key having non-numeric value from a given dictionary"
+
+def extractNonNumeric(inpDict): 
+    result = {} # result holder 
+    for key, value in inpDict.items():
+    # loop the dictionary, if value is non-numeric then append it to the result 
+        if not isinstance(value, (int, float)):
+            result[key] = value
+    return result
 
