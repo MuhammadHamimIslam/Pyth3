@@ -1,0 +1,6 @@
+Python is a very easy programming language.
+Python can be used for many purposes such as web development, app development, AI, machine learning, deep learning, LLM etc.
+It's easy to learn.
+It's syntax is also easy and human readable.
+
+# it's a simple txt file to practice python file reading.
