@@ -37,9 +37,12 @@ print("file closed!")
 "By using with keyword, The file will be automatically closed"
 
 "writing to a file"
-"To write to a file, we need to open with 'w' mode. If we open a file using 'w' open mode, The exiting content of the file will be removed"
-
+"If we open a file using 'w' open mode, The exiting content of the file will be removed"
+# writing a file with "w" mode
 "file writing with error handling"
+
+# using "a" mode
+"If we open a file using 'a' open mode, The content will be added after the previous content"
 
 # -> using file.write()
 try:
@@ -48,6 +51,13 @@ try:
         print("content added successfully!")
 except PermissionError as e:
     print(e)
+
+try:
+    with open("example1.txt", "a") as file: 
+        file.write("\n\nThis content will be added after the previous content")
+except PermissionError:
+    print("Permission Error!")
+
 
 # -> using file.writelines()
 lines = ["first line\n", "second line\n", "third line\n"]
@@ -58,3 +68,4 @@ try:
         print("content added successfully")
 except PermissionError as e:
     print(e)
+    
