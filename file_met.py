@@ -20,3 +20,6 @@ try:
 except Exception as e:
     print(f"Error occured: {e}")
 
+"Checking if a directory exists"
+
+print(os.path.exists(oldName)) # returns true if this file/folder exists
