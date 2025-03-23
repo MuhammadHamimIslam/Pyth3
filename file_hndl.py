@@ -38,26 +38,25 @@ print("file closed!")
 
 "writing to a file"
 "If we open a file using 'w' open mode, The exiting content of the file will be removed"
-# writing a file with "w" mode
-"file writing with error handling"
 
 # using "a" mode
 "If we open a file using 'a' open mode, The content will be added after the previous content"
+try:
+    with open("example1.txt", "a") as file: 
+        file.write("\n\nThis content will be added after the previous content")
+except:
+    print("Error!")
+
+# writing a file with "w" mode
+"file writing with error handling"
 
 # -> using file.write()
 try:
     with open("example2.txt", "w") as fl: 
         fl.write("Hello, World!")
         print("content added successfully!")
-except PermissionError as e:
-    print(e)
-
-try:
-    with open("example1.txt", "a") as file: 
-        file.write("\n\nThis content will be added after the previous content")
-except PermissionError:
-    print("Permission Error!")
-
+except:
+    print("Error!")
 
 # -> using file.writelines()
 lines = ["first line\n", "second line\n", "third line\n"]
@@ -66,6 +65,22 @@ try:
         # readlines() takes a list of string and writes to the file
         myFile.readlines(lines)
         print("content added successfully")
-except PermissionError as e:
-    print(e)
+except:
+    print("Error!")
+
+"writing and reading from a file"
+# using "w+" mode
+# we will use file.seek(offset[, whence] )
+try:
+    with open("example2.txt", "w+") as myF: 
+        myF.write("I have a pen!")
+        # move file pointer to 8th byte
+        myF.seek(8, 0)
+        # read 3 bytes from current position 
+        data = myF.read(3)
+        print(data)
+        myF.write("phone")
+except:
+    print("Error!")
+    
     
