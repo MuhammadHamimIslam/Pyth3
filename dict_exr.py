@@ -116,3 +116,31 @@ def extractNonNumeric(inpDict):
             result[key] = value
     return result
 
+"A function to calculate the toal price of the items of input dictionary's list"
+
+def totalPrice(inpList): 
+    total = 0 # result holder 
+    for item in inpList: 
+        total += item["quantity"] * item["price"]
+        print(item)
+    return total
+
+"A function to calculate the toal price of the items of input dictionary's list. N.B-> 10% discount will be applied to every 3 items"
+
+def totalPriceWithDiscount(inpList): 
+    result = 0 # result holder 
+    payRate = 0.9 # when 10% discount 
+    for item in inpList:
+        # discountable item
+        discountable = (item["quantity"] // 3) * 3
+        # non discountable item
+        nonDiscountable = (item["quantity"] % 3)
+        # calculate the price of the discountable items 
+        priceWithDiscount = discountable * item["price"] * payRate
+        # calculate the price of the non-discountable items 
+        priceWithoutDiscount = nonDiscountable * item["price"]
+        # now update the result with the sum of both non-discountable and discountable 
+        result += (priceWithDiscount + priceWithoutDiscount)
+    return result 
+
+
