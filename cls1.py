@@ -27,6 +27,7 @@ print(product1.totalPrice)
 "Adding data using constructor (__int__)"
 
 class phone:
+    "A simple class to create phone objects"
     # adding data to the object 
     def __init__(self, name: str, model: str, price: float, quantity = 0):
         # validate input
@@ -52,3 +53,28 @@ print(f"Total Price is: {Samsung.totalPrice()}")
 iPhone = phone("iPhone", "16 Pro Max", 550, 2)
 print(f"iPhone's name: {iPhone.name}")
 print(f"Total Price is: {iPhone.totalPrice()}")
+
+
+"Some functions for classes"
+
+"-> hasattr(obj, name) to check if an attribute is present"
+print(hasattr(iPhone, "model")) # returns true if "mode" attribute is present 
+
+"-> getattr(obj, name) to get the attribute"
+print(getattr(iPhone, "name")) # returns tje "name" attribute 
+
+"-> setattr(obj, name, value) to set a new attribute"
+setattr(iPhone, "model", "17 pro max") # sets "model" to 17 pro max 
+print(f"{iPhone.model = }")
+
+"-> delattr(obj, property) to delete an attribute"
+delattr(Samsung, "price") # deletes the price
+print(Samsung.__dict__) # there's no longer price's present 
+
+"Build in class attributes"
+
+print(phone.__dict__) # convert to a dictionary from the class's namespace 
+print(phone.__doc__) # returns tje docstrings inside the class
+print(phone.__name__) # returns the class's name
+print(phone.__module__) # returns the module where the class is defined 
+print(phone.__bases__) # returns the base class
