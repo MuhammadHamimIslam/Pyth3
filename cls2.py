@@ -22,14 +22,16 @@ class item:
         rateOfPay = (1 - self.discount)
         self.price *= rateOfPay
 
-
 item1 = item("Rice", 50, 10)
 item2 = item("Meat", 800, 5)
 item3 = item("Vegetable", 45, 1)
 
-print(item1.totalPrice())
+print(f"Total price of meat after 20% discount: {item1.totalPrice()}")
 
 """What if we want to apply different discount for each item?
 Then need to change the discount from instance level then apply different discount
 """
 # If we want to apply 30% discount for Meats then we'll change it from instance level 
+item2.discount = 0.3
+print(f"Total price of meat after 30% discount: {item2.totalPrice()}")
+
