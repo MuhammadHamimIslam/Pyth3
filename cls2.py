@@ -34,4 +34,3 @@ Then need to change the discount from instance level then apply different discou
 # If we want to apply 30% discount for Meats then we'll change it from instance level 
 item2.discount = 0.3
 print(f"Total price of meat after 30% discount: {item2.totalPrice()}")
-
