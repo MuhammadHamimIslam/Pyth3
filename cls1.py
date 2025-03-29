@@ -4,7 +4,7 @@
 
 class myClass: 
     var = 100
- 
+
 "accessing an obj inside a class"
 myObj = myClass()
 
@@ -54,6 +54,20 @@ iPhone = phone("iPhone", "16 Pro Max", 550, 2)
 print(f"iPhone's name: {iPhone.name}")
 print(f"Total Price is: {iPhone.totalPrice()}")
 
+"Public, Private, Protected variable"
+
+class person: 
+    def __init__(self, name, age, idNo):
+        self.name = name # public variable can be accessed any time 
+        self._age = age # with one _, it's protected variable 
+        self.__idNo = idNo # with double __, it's private variable
+        
+person1 = person("XYZ", 23, "1oxyxP0001")
+print(person1.name)
+print(person1._age)
+# print(person1.__idNo) will raise an error because of being a private variable 
+# to access it we need (obj._class__var)
+print(person1._person__idNo)
 
 "Some functions for classes"
 
@@ -75,13 +89,28 @@ print(Samsung.__dict__) # there's no longer price's present
 
 "using @classmethod"
 class tree: # an empty class
-    treeNum = 0
+    i = 0
+    @classmethod
+    def say(): 
+        print("Tree is very important for us.")
 
-# adding method dynamically  
+# defining method  
 @classmethod
-def treeCount(clss): 
-    # increase the tree count whenever it's being called 
-    clss.treeNum += 1
+def treeCount(self):
+    self.i += 1 # increase count by 1
+    print(f"tree count {self.i}")
+
+# adding method 
+setattr(tree, "count", treeCount)
+
+mangoTree = tree()
+print(mangoTree.count())
+
+"dynamically delete attribute"
+del tree.say # deletes the attribute 
+
+"static methods of class"
+
 
 
 "Build in class attributes"
