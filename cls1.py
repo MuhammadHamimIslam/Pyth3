@@ -69,9 +69,32 @@ print(person1._age)
 # to access it we need (obj._class__var)
 print(person1._person__idNo)
 
+"property object"
+class student: 
+    def __init__(self, name, age):
+        self.__name = name # private var
+        self.__age = age # private var
+    # function for getting name
+    def getName(self):
+        return self.__name
+    # function for getting age
+    def getAgr(self):
+        return self.__age
+    # function for setting name 
+    def setName(self, name):
+        self.__name = name
+    # function for setting age
+    def setAge(self, age):
+        self.__age = age
+        
+    
+
 "Some functions for classes"
 
 "-> hasattr(obj, name) to check if an attribute is present"
+
+
+
 print(hasattr(iPhone, "model")) # returns true if "mode" attribute is present 
 
 "-> getattr(obj, name) to get the attribute"
