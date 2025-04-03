@@ -85,7 +85,7 @@ print(shape1 > shape2)
 
 "class inheritance"
 
-"Single inheritance"
+"-> Single inheritance"
 # parent class
 class parent: 
     def parentMethod(self): # a parent method 
@@ -101,3 +101,58 @@ child1 = child()
 # by using child object, we can access both parent and child method, variables, function
 child1.childMethod()
 child1.parentMethod()
+
+"-> Multiple inheritance"
+
+class parent1: # parent 1 class
+    def parent1Method(self): 
+        print("I'm parent1")
+class parent2: # parent 2 class
+    def parent2Method(self):
+        print("I'm parent2")
+#child class inherits both parent1 & parent2
+class myChild(parent1, parent2): 
+    def childMethod(self): 
+        print("I'm a child")
+
+myChildObj = myChild() # object from the child
+myChildObj.parent1Method() # gets parent1
+myChildObj.parent2Method() # gets parent2
+myChildObj.childMethod() # gets child
+
+"-> multi level inheritance"
+
+class world: # a parent class 
+    def worldMethod(self): 
+        print("I'm the entire world!")
+class Bangladesh(world): # Bangladesh class inherits from world 
+    def bangladeshMethod(self): 
+        print("I'm Bangladesh 🇧🇩")
+class Dhaka(Bangladesh): # Dhaka that inherits both Bangladesh and world 
+    def dhakaMethod(self): 
+        print("Dhaka is the capital of Bangladesh")
+
+DhakaCity = Dhaka() # object from Dhaka 
+DhakaCity.worldMethod()
+DhakaCity.bangladeshMethod()
+DhakaCity.dhakaMethod()
+
+"super() function"
+
+class person: # person class
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def email(self): 
+        return f"{self.name}.{self.age}@gmail.com"
+class student(person): # student is also a person. so it inherits person class
+    def __init__(self, name, age, idNo):
+        # using super() we can inherit any property from parent class
+        super().__init__(name, age) 
+        self.idNo = idNo
+
+student1 = student("pqr", 15, "123ji")
+print(student1.__dict__)
+print(student1.email())
+
+"polymorphism"
