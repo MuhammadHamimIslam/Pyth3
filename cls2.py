@@ -83,6 +83,26 @@ print(shape1 < shape2)
 # if we try to use "<" to compare 2 objects, we'll get an error. By using __gt__ method we can define it
 print(shape1 > shape2)
 
+"listing all instances of a class"
+
+class hero: 
+    heros = [] # result holder
+    def __init__(self, name, rank):
+        # adding properties 
+        self.name = name 
+        self.rank = rank
+        # adding all instances to list
+        hero.heros.append(self)
+    def __repr__(self): # representative of objects 
+        return f"hero('{self.name}', {self.rank})"
+
+hero1 = hero("a", 3)
+hero2 = hero("b", 4)
+hero3 = hero("c", 2)
+hero5 = hero("d", 1)
+
+print(hero.heros) # returns all heros
+
 "class inheritance"
 
 "-> Single inheritance"
