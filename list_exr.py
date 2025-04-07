@@ -81,3 +81,12 @@ def findCommon(*lists):
   for elm in lists[1:]: # loop through other elements 
     result &= set(elm) # convert others to set and do intersection 
   return list(result)
+
+"A function to find Fibonacci sequence upto n"
+
+def fibonacciSeq(n):
+    result = [0, 1][:n] # result holder
+    for i in range(n): 
+        result.append(sum(result[-2:])) # find the sum of last 2 numbers to append the next element 
+    return result
+
