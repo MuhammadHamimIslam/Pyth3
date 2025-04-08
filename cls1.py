@@ -96,16 +96,16 @@ print(f"student's name is: {student1.name}")
 "property decorator-data encapsulation"
 class employee: 
     def __init__(self, name, email):
-        self._name = name # protected property 
+        self.__name = name # protected property 
         self.email = email
     # property decorator 
     @property
     def name(self): # get the value of name property 
-        return self._name # protected property 
+        return self.__name # private property
     
     @name.setter # name property setter
     def name(self, value):
-        self._name = value
+        self.__name = value
     
         
 
@@ -113,7 +113,8 @@ class employee:
 "-> hasattr(obj, name) to check if an attribute is present"
 
 Employee1 = employee("pqr", "pqr93@gmail.com")
-print(Employee1.__dict__)
+Employee1.name = "mno" # private property setter
+print(Employee1.name)
 
 print(hasattr(iPhone, "model")) # returns true if "mode" attribute is present 
 

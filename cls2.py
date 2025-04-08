@@ -170,9 +170,11 @@ class student(person): # student is also a person. so it inherits person class
         # using super() we can inherit any property from parent class
         super().__init__(name, age) 
         self.idNo = idNo
+    def __repr__(self):
+        return f"{self.__class__.__name__}('{self.name}', {self.age}, {self.idNo}, {self.email()})"
 
 student1 = student("pqr", 15, "123ji")
-print(student1.__dict__)
-print(student1.email())
+print(student1)
 
 "polymorphism"
+# polymorphism is a concept where a function behaves different in different scenarios
