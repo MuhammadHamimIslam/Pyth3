@@ -178,3 +178,22 @@ print(student1)
 
 "polymorphism"
 # polymorphism is a concept where a function behaves different in different scenarios
+class duck: 
+    def sound(self):
+        print("quak quak!")
+        
+class hen: 
+    def sound(self): 
+        print("kok kok!")
+# sound making function 
+def makeSound(bird): 
+    bird.sound()
+
+# instances of the class
+Duck = duck()
+Hen = hen()
+# now call the function 
+makeSound(Duck) # makes the sound of duck
+makeSound(Hen) # makes the sound of hen 
+
+
