@@ -162,3 +162,26 @@ def rot13(text):
       result.append(char)
   return "".join(result)
   
+"A function to convert rgb value to hexadecimal"
+
+def rgbToHexa(*rgb):
+    result = "" # result holder 
+    if len(rgb) > 4 or len(rgb) < 3: # if invalid from just show the message 
+        return "invalid rgb color format"
+    for value in rgb: # loop the rgb values 
+        if not(0 <= value <= 255): # if an invalid rgb value 
+            return "rgb value must be greater than 0 and less than 256"
+        result += hex(value)[2:].upper().zfill(2) # add to result 
+    return result
+
+"A function to convert hexadecimal value to rgb"
+
+def hexaToRGB(hexa):
+    # remove # from start 
+    hexa = hexa.lstrip("#")
+    # now get the value for r, g, b
+    r = int(hexa[:2], 16) # first 2 char
+    g = int(hexa[2:4], 16) # middle 2 char
+    b = int(hexa[4:], 16) # last 2 char
+    return (r, g, b) # return a tuple of r, g, b
+    
