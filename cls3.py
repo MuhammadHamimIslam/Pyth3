@@ -71,7 +71,68 @@ class Bangladesh:
     class divisions: 
         def __init__(self):
             self.names = sorted(["Dhaka", "Barishal", "Khulna", "Chittagong", "Rajshahi", "Mymensingh", "Rangpur", "Sylhet"])
-            self.division = 8
+            self.division = self.names.__len__()
 
 bd = Bangladesh("147570km", "168M")
 print(bd)
+
+"Anonymous class"
+# python doesn't have built in anonymous class but we can dynamically create it using type() function 
+# syntac: class = type(name, (baseClass), attribute / method, {methods})
+methods = {
+    "intro": lambda self: "I'm an anonymous class!", # intro method 
+    "__init__": lambda self, name: setattr(self, "name", name), # init method 
+    "__repr__": lambda self: f"{self.__class__.__name__}('{self.name}')"
+    } # defining method/properties for anonymous class 
+
+anonymousClass = type("anonymousClass", (), methods)
+
+anoyObj = anonymousClass("Anonymous Class")
+print(anoyObj)
+
+"Singleton Class"
+# singleton class is a class where ony 1 object can be created from the class. If multiple is created the first will be counted 
+"-> using __init__()"
+class singleton1: 
+    __instance = None # singleton instance holder
+    @staticmethod
+    def createInstance(self):
+        # static method to create an instance 
+        if singleton1.__instance == None:
+            # if no instance is present, create one 
+            singleton1()
+        # return the previous or new created instance 
+        return singleton1.__instance
+    # constructor to initialize the singleton instance
+    def __init__(self, info):
+        # if an instance is already present raise an error (Exception)
+        if singleton1.__instance != None:
+            raise Exception("Object exists!")
+        else:
+            # if instance isn't present already, set it to current object (self) 
+            singleton1.__instance = self
+        # property of the class
+        self.info = info
+        
+obj1 = singleton1("It's a singleton object")
+
+print(obj1.__dict__)
+
+"-> using __new__() function"
+
+class singleton2: 
+    __instance = None
+    # __new__() function creates new instances for a class
+    def __new__(cls):
+        # check if instance is present
+        if singleton2.__instance is None:
+            # if object not present the create one
+            cls.__instance = super(singleton2, cls).__new__(cls)
+        else: #if object is found then raise an error 
+            raise Exception("Obj exists")
+        return singleton2.__instance
+    
+obj2 = singleton2()
+
+"Wrapper class"
+
