@@ -185,3 +185,12 @@ def hexaToRGB(hexa):
     b = int(hexa[4:], 16) # last 2 char
     return (r, g, b) # return a tuple of r, g, b
     
+"A function to print a triangle of *"
+def printStar(inpNum):
+    # iterate through the input number from 1 and print * side by side and after one iteration add a line break 
+    for i in range(1, inpNum + 1): 
+        for j in range(i): 
+            print("*", end = "")
+        print()
+
+ 

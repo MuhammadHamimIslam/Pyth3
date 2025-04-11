@@ -90,3 +90,16 @@ def fibonacciSeq(n):
         result.append(sum(result[-2:])) # find the sum of last 2 numbers to append the next element 
     return result
 
+"A function to list all Armstrong numbers with a range"
+def allArmstrong(inpRange): 
+    def isArmstrong(inpNum):
+        result = 0 # result initialized with 0
+        # iterate through the string version of the number 
+        for number in str(inpNum): 
+            # now make the elm to int and rasie power to the length then add to result 
+            result += int(number) ** len(str(inpNum))
+
+        # now return the comparison of the original and result value 
+        return result == inpNum
+    # interate through the given range and use list compression and apply isArmstrong() function   
+    return [i for i in range(inpRange + 1) if isArmstrong(i)] 
