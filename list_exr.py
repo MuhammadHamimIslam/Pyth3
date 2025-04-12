@@ -91,6 +91,7 @@ def fibonacciSeq(n):
     return result
 
 "A function to list all Armstrong numbers with a range"
+
 def allArmstrong(inpRange): 
     def isArmstrong(inpNum):
         result = 0 # result initialized with 0
@@ -103,3 +104,13 @@ def allArmstrong(inpRange):
         return result == inpNum
     # interate through the given range and use list compression and apply isArmstrong() function   
     return [i for i in range(inpRange + 1) if isArmstrong(i)] 
+
+"A function to do the same as range()"
+
+def myRange(start, stop, step = 1):
+    result = [] # result holder 
+    while stop > start: # loop from start to stop 
+        result.append(start) # append to result 
+        start += step # increment 
+    return result
+
