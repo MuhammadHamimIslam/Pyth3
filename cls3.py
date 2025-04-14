@@ -135,4 +135,20 @@ class singleton2:
 obj2 = singleton2()
 
 "Wrapper class"
+# decorator function 
+def decoratorFun(wrapped): 
+    class Wrapper: # wrapper class
+        def __init__(self, x):
+            self.wrap = wrapped(x) # call the wrapped(decoration) function 
+        def showName(self): 
+            return self.wrap.name
+    return Wrapper
+# class that will be decorated 
+@decoratorFun
+class Wrapped: 
+    def __init__(self, x):
+        self.name = x
+        
+wrapObj = Wrapped("Pyth3")
 
+print(wrapObj.showName())
