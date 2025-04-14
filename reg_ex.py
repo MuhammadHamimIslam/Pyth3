@@ -5,6 +5,8 @@ import re
 """re class has several function:
     re.search()
     re.findall()
+    re.split()
+    re.sub()
     """
 
 text = "Bangladesh is the most beautiful county in the world"
@@ -14,3 +16,4 @@ text = "Bangladesh is the most beautiful county in the world"
 x = re.findall("^Bangladesh.*world$", text)
 
 print(x)
+

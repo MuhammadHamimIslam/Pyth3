@@ -36,3 +36,10 @@ print(timeSet.strftime("%a"))
 """
 
 
+now = datetime.datetime.now()
+
+prev = datetime.datetime(2008, 4, 14)
+
+diff = now - prev
+
+print(diff)
