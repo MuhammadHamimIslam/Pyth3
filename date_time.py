@@ -34,5 +34,3 @@ print(timeSet.strftime("%a"))
  %M -> Minutes 
  %a -> Seconds
 """
-
-
