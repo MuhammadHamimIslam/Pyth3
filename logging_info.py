@@ -4,7 +4,7 @@ import logging
 # the default logging level is warning
 # we can format the logging using format = "%(asctime)s" for time "%(levelname)s for seeing the level %(message)s to see the message"
 
-logging.basicConfig(level = logging.DEBUG, format = "%(asctime)s - %(levelname)s - %(message)s", fileName = "x.log")
+logging.basicConfig(level = logging.DEBUG, format = "%(asctime)s - %(levelname)s - %(message)s", filename = "x.log")
 
 # a function to add 2 numbers 
 def add(num1, num2):
