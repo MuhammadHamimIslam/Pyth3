@@ -4,9 +4,9 @@ import re
 
 """re class has several function:
     re.search(pattern, text, flag=0)
-    re.findall()
+    re.findall(pattern, text, flag)
     re.split()
-    re.sub()
+    re.sub(pattern, replaceText, text)
 """
 
 email = input("Enter your text here: ")
@@ -38,3 +38,5 @@ if re.search(r"^\w+@\w+\.(com|edu|net|gov)$", email, re.IGNORECASE): # means the
     print("Valid")
 else:
     print("Invalid")
+
+
