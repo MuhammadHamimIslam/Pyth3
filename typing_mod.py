@@ -1,4 +1,4 @@
-from typing import List, Dict, Set, Any, Sequence, Optional, Callable
+from typing import List, Dict, Set, Any, Sequence, Optional, Callable, Tuple 
 
 # we can use annotation in any Variable, function for more readability and better documentation
 
@@ -43,6 +43,7 @@ function(1)
 
 def multiply(a: int, b: int) -> int: 
     return a * b
+    
 # we can also specify type to Callable[[parameterType], returnType]
 def test(func: Callable[[int, int], int]) -> None: 
     result = func(10, 20)
@@ -50,3 +51,5 @@ def test(func: Callable[[int, int], int]) -> None:
 
 test(multiply)
 
+# for Tuple we need to specify every items type 
+myTuple: Tuple[str, int, bool, List[int]] = ("python", 1990, True, [1, 2, 3])
