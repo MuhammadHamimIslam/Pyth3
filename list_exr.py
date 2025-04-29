@@ -114,3 +114,13 @@ def myRange(start, stop, step = 1):
         start += step # increment 
     return result
 
+"A function to check if a number is prime"
+
+def isPrime(num):
+  i = num - 1
+  arr = []
+  while i > 1:
+    arr.append((num % i) == 0)
+    i-= 1
+  return True not in arr
+  
