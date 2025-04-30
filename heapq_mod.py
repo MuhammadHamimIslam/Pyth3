@@ -28,4 +28,7 @@ print(myArray)
 heapq.heappop(myArray) # removes the first smallest item from the list 
 print(myArray)
 
+"heapq.heapreplace(heap, item)"
 
+heapq.heapreplace(myArray, 48) # Pop and return the current smallest value, and add the new item.
+print(myArray)
