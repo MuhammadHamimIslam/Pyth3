@@ -1,7 +1,7 @@
 import requests
 
 # setting header
-headers = {"user-agent": "python-project"}
+headers = {"user-agent": "python-test"}
 response = requests.get("https://muhammadhamimislam.github.io/country_info/info.json", headers= headers)
 
 print(response)
