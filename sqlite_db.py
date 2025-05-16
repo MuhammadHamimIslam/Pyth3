@@ -10,21 +10,38 @@ cur = conn.cursor()
 # now using cur.execute("") we can give SQLite command 
 cur.execute("CREATE TABLE students (Name TEXT, Age INTEGER, ID_NO TEXT)")
 # now finish command with cur.commit()
-cur.commit()
+conn.commit()
 
-"Adding data in the table"
+"Adding data in the table - 1st way"
 # take input for data
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))
-id_no = input("Enter your ID NO: ")
+name1 = input("Enter your name: ")
+age1 = int(input("Enter your age: "))
+id_no1 = input("Enter your ID NO: ")
 
-cur.execute("INSERT INTO students VALUES (:name, :age, :id_no)", {"name": name, "age": age, "id_no": id_no}) # insert data
+cur.execute("INSERT INTO students VALUES (:name, :age, :id_no)", {"name": name1, "age": age1, "id_no": id_no1}) # insert data
 conn.commit() # commit changes
 
-"Getting data from database"
-searched_name = input("Enter the name for what's you're looking for: ")
+"Adding data in the table - 2nd way"
+#take input for data
+name2 = input("Enter your name: ")
+age2 = int(input("Enter your age: "))
+id_no2 = input("Enter your ID NO: ")
 
-cur.execute(f"SELECT * FROM students WHERE name = '{searched_name}'") # search for data with queries 
+cur.execute("INSERT INTO students VALUES (?, ?, ?)", (name2, age2, id_no2)) # insert data
+conn.commit() # commit changes
+
+"Getting data from database - 1st way"
+
+searched_name1 = input("Enter the name for what's you're looking for: ")
+
+cur.execute(f"SELECT * FROM students WHERE name = :name", {"name": searched_name1}) # search for data with queries 
+print(cur.fetchall()) # print data
+
+"Getting data from database - 2nd way"
+
+searched_name2 = input("Enter the name for what's you're looking for: ")
+
+cur.execute(f"SELECT * FROM students WHERE name = ?", (searched_name2, )) # search for data with queries 
 print(cur.fetchall()) # print data
 
 # now have to close the file
