@@ -31,18 +31,24 @@ id_no2 = input("Enter your ID NO: ")
 cur.execute("INSERT INTO students VALUES (?, ?, ?)", (name2, age2, id_no2)) # insert data
 conn.commit() # commit changes
 
+# add multiple data at a time 
+info = [("Abc", 29, 1001), ("pqr", 32, 1100)]
+
+cur.executemany("INSERT INTO students VALUES (?, ?, ?)", info) # add multiple data
+conn.commit() 
+
 "Getting data from database - 1st way"
 
 searched_name1 = input("Enter the name for what's you're looking for: ")
 
-cur.execute(f"SELECT * FROM students WHERE name = :name", {"name": searched_name1}) # search for data with queries 
+cur.execute("SELECT * FROM students WHERE name = :name", {"name": searched_name1}) # search for data with queries 
 print(cur.fetchall()) # print data
 
 "Getting data from database - 2nd way"
 
 searched_name2 = input("Enter the name for what's you're looking for: ")
 
-cur.execute(f"SELECT * FROM students WHERE name = ?", (searched_name2, )) # search for data with queries 
+cur.execute("SELECT * FROM students WHERE name = ?", (searched_name2, )) # search for data with queries 
 print(cur.fetchall()) # print data
 
 "Order the Data from database"
@@ -52,6 +58,8 @@ print(cur.fetchall())
 
 cur.execute("SELECT rowid, * FROM students ORDER BY name DESC") # ordering the data by name descending order 
 print(cur.fetchall())
+
+"Limiting the return value"
 
 
 # now have to close the file
