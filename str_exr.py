@@ -194,4 +194,17 @@ def printStar(inpNum):
             print("*", end = "")
         print()
 
+"a function to get username, domain, codomain, extension from an email address"
 
+def get_info_from_email(email):
+    part1, part2 = email.split("@") # split by @ sign
+    username = "".join([char for char in part1 if not char.isdigit()])
+    domain_parts = part2.rsplit(".", 2)
+    if len(domain_parts) == 3: 
+        domain, codomain, extension = domain_parts
+    else:
+        domain, extension = domain_parts
+        codomain = ""
+    print(username, domain, codomain,  extension)
+    
+get_info_from_email("muhammadhamimislam47@gmail.com")

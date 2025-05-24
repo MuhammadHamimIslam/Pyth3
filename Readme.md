@@ -24,7 +24,7 @@ To install the dependencies, you can use `pip`. First, clone the repository and 
 ```bash
 git clone https://github.com/MuhammadHamimIslam/Pyth3.git
 cd Pyth3
-pip install -r requirements.txt
+
 ```
 
 ## Usage
