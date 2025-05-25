@@ -206,5 +206,3 @@ def get_info_from_email(email):
         domain, extension = domain_parts
         codomain = ""
     print(username, domain, codomain,  extension)
-    
-get_info_from_email("muhammadhamimislam47@gmail.com")
