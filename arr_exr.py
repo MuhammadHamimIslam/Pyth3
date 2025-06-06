@@ -46,8 +46,3 @@ def splitArray(inpArr):
     return [evens, odds]
 
 "A function to perform insertion sort on an array"
-
-inp = arr.array("i", [5, 4, 3, 2, 1])
-
-
-print(splitArray(inp))

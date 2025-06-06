@@ -123,4 +123,27 @@ def isPrime(num):
     arr.append((num % i) == 0)
     i-= 1
   return True not in arr
-  
+
+"A function to find out the permutation nPr"
+def permutation(n, r): 
+    if r > n: # validate n, r
+      return "r can't be greater than n!"
+    result = n # initially result set with n
+    x = n # indicator variable 
+    # run a loop upto r
+    for i in range(1, r): 
+        x -= 1 # decrease x to 1
+        result *= x # multiply x by the result 
+    return result
+
+"A function to find out the combination nCr"
+def combination(n, r): 
+    from math import factorial
+    fct = factorial((n - r)) # find factorial of n - r
+    result = n # result set to n
+    x = n
+    # run a for loop 1 to (n - r)
+    for _ in range(1, (n - r)):
+        x -=1 # decrease x to 1
+        result *= x # multiply the result by x
+    return int(result / fct)
