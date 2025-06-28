@@ -1,0 +1,10 @@
+Hello {{ name }}! What's up?
+{% if score > 70 %} {# way to write python expression #}
+We're very glad to inform you that your {{ test_name }}'s result is published.
+{% else %} 
+We're sad to inform you that your {{ test_name }}'s result is published.
+{% endif %} {# end of if block #}
+You scored {{ score }} out of {{ max_score }}.Best of luck.
+
+See you tomorrow!
+Anke
