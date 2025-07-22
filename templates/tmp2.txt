@@ -7,4 +7,3 @@ We're sad to inform you that your {{ test_name }}'s result is published.
 You scored {{ score }} out of {{ max_score }}.Best of luck.
 
 See you tomorrow!
-Anke
